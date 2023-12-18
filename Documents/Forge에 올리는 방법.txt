@@ -1,0 +1,39 @@
+<업로드 전 확인사항>
+1. A에서 쓰려고 만든 것을 다른 개발자는 B에서 쓸지 모름을 고려한다.
+2. Traditional Web보다 Reactive Web을 권장한다.
+3. 앱, 모듈, 블록, 액션에 아이콘을 적용한다.
+	- 앱, 모듈: 1024 x 1024 px 권장
+	- 블록, 액션: 32 x 32 px 권장
+4. 분명하고 간결한 Documentation을 만든다.
+5. Demo앱을 만든다.
+6. 사용 안 하는 Dependency를 모두 제거한다.
+	- 모듈 안에서 Module 메뉴의 Remove Unused Dependencies 기능 추천
+
+<업로드 방법>
+1. 앱을 OAP파일로 다운로드한다.
+	- OAP파일 용량 제한: 256MB
+	- Demo앱도 마찬가지
+2. Forge에 접속하여 Upload asset 버튼을 누른다.
+3. Add file 영역에 Forge에 올릴 앱을 넣고, Upload demo 영역에 Demo 앱을 넣는다.
+4. Forge에서 검색하면 노출될 영역들을 채운다.
+	- Icon: 자동완성이 안 될 시 입력
+	- Name: 자동완성이 안 될 시 입력
+	- Type: 자동완성이 안 될 시 입력
+	- Summary: 자동완성이 안 될 시 입력 (20자 이상)
+	- Screenshot: 앱의 기능, 용례 등을 보여주는 bmp, gif, jpg, png
+	- Description: 앱의 기능과 옵션을 상세하게 설명 (150자 이상)
+	- Version: 최신 버전을 알기 쉽게끔 설정. 처음은 1.0.0 추천
+	- Category: 목적에 가장 가까운 항목 선택
+	- Tag: 연관 검색어 입력
+5. Documentation을 분명하고 간결하게 작성한다.
+	- 설치 및 구현에 필요한 것들 기재
+	- 무엇을 할 수 있는지 기재
+	- 250자 이상
+6. 준비가 다 된 앱이라면 Upload 버튼을, 아직 개발 중이며 Community에서 테스트하고 싶다면 Uload as under development 버튼을 누른다.
+* Forge에 바로 올라가는 것이 아니라 아웃시스템즈 측의 검사를 통과하면 노출된다.
+
+<Trusted 배지를 다는 방법>
+1. Forge에 접속하여 업로드한 앱에서 Manage의 Request trusted badge를 누른다.
+	- 아직 승인 전으로 전체공개가 되지 않은 상태면 불가능
+2. 미흡한 사항이 있으면 Messages로 피드백을 받고 수정한다.
+	- 업로드한 앱에서 Manage의 Edit project details를 누르고 Try now URL에 Demo 앱이 실행되는 주소 입력.
