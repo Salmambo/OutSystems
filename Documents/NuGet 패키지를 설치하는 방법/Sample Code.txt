@@ -1,0 +1,41 @@
+Solver solver = Solver.CreateSolver("GLOP");
+if (solver is null)
+{
+    return;
+}
+// x and y are continuous non-negative variables.
+Variable x = solver.MakeNumVar(0.0, double.PositiveInfinity, "x");
+Variable y = solver.MakeNumVar(0.0, double.PositiveInfinity, "y");
+
+ssSolution = "Number of variables = " + solver.NumVariables();
+
+// x + 2y <= 14.
+solver.Add(x + 2 * y <= 14.0);
+
+// 3x - y >= 0.
+solver.Add(3 * x - y >= 0.0);
+
+// x - y <= 2.
+solver.Add(x - y <= 2.0);
+
+ssSolution += "\nNumber of constraints = " + solver.NumConstraints();
+
+// Objective function: 3x + 4y.
+solver.Maximize(3 * x + 4 * y);
+
+Solver.ResultStatus resultStatus = solver.Solve();
+
+// Check that the problem has an optimal solution.
+if (resultStatus != Solver.ResultStatus.OPTIMAL)
+{
+    ssSolution = "The problem does not have an optimal solution!";
+    return;
+}
+ssSolution += "\nSolution:";
+ssSolution += "\nObjective value = " + solver.Objective().Value();
+ssSolution += "\nx = " + x.SolutionValue();
+ssSolution += "\ny = " + y.SolutionValue();
+
+ssSolution += "\n\nAdvanced usage:";
+ssSolution += "\nProblem solved in " + solver.WallTime() + " milliseconds";
+ssSolution += "\nProblem solved in " + solver.Iterations() + " iterations";
